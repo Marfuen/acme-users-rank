@@ -4,6 +4,7 @@ Didn't have time for Top Ranked :/
 
 Getting this error when deploying to heroku:
 
+
  { SequelizeConnectionRefusedError: connect ECONNREFUSED 127.0.0.1:5432
 2019-04-04T21:35:40.638005+00:00 app[web.1]:     at connection.connect.err (/app/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:142:24)
 2019-04-04T21:35:40.638007+00:00 app[web.1]:     at Connection.connectingErrorHandler (/app/node_modules/pg/lib/client.js:163:14)
