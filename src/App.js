@@ -4,6 +4,7 @@ import { fetchUsers } from "./store";
 import { connect } from "react-redux";
 import Users from "./Users";
 import Navbar from "./Navbar";
+import {CreateUser} from "./CreateUser";
 
 const mapStateToProps = state => {
   return {
@@ -30,7 +31,9 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" render={() => <div>We have {userCount} Users!</div>}/>
-          <Route path="/users" render={({history}) => <Users users={users} deleteUser={this.props.deleteUser} history={history}/>}/>
+          <Route exact path="/users" render={({history}) => <Users users={users} deleteUser={this.props.deleteUser} history={history} getUsers={this.props.getUsers}/>}/>
+          <Route path="/create" render={({history}) => <CreateUser history={history}/>}/>
+          <Route path="/users/:id" render={({match, history}) => <CreateUser id={match.params.id} user={users.find(user => user.id === match.params.id*1)} history={history}/>}/>
         </Switch>
       </div>
     )
