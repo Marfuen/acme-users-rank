@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const DATABASE_URL = 'postgres://localhost/acmeusersrank' || process.env.DATABASE_URL
+const DATABASE_URL = process.env.DATABASE_URL || 'postgres://localhost/acmeusersrank'
 const db = new Sequelize(DATABASE_URL, {
   dialect: 'postgres',
   logging: 'false',
